@@ -1,6 +1,6 @@
 class ModuleConfig {
   // 端口号
-  readonly port = 1995;
+  readonly port = 3000;
 
   // 数据库配置
   readonly db = {
@@ -22,9 +22,6 @@ class ModuleConfig {
 
   // token长度
   readonly token_size = 28;
-
-  // token 格式错误提示文字
-  readonly token_tip = "Invalid token";
 }
 
 const config = new ModuleConfig();
