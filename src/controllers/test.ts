@@ -40,7 +40,7 @@ class TestController {
     const params = ctx.request.body;
     const test = params.test;
 
-    await validateGetTestDemoByGet(params, ctx);
+    await validateGetTestDemoByPost(params, ctx);
 
     ctx.body = {
       code: STATUS_SUCCESS,
