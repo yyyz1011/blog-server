@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/yyyz1011/blog-server#readme",
   "dependencies": {
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/koa": "^2.13.4",
     "@types/koa-router": "^7.4.4",
     "nodemon": "^2.0.15",

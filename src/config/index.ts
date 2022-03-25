@@ -1,11 +1,11 @@
-import dbConfig from "./private.config"
+import { dbConfig, tokenKey } from "./private.config";
 
 class ModuleConfig {
   // 端口号
   readonly port = 3000;
 
   // 数据库配置
-  readonly db = dbConfig
+  readonly db = dbConfig;
 
   // 接口前缀
   readonly api_prefix = "/api";
@@ -16,8 +16,8 @@ class ModuleConfig {
   // 上传图片大小限制
   readonly upload_img_size = 5 * 1024 * 1024;
 
-  // token长度
-  readonly token_size = 28;
+  // token key
+  readonly token_key = tokenKey;
 }
 
 const config = new ModuleConfig();
