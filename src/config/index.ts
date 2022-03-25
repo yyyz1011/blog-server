@@ -1,15 +1,11 @@
+import dbConfig from "./private.config"
+
 class ModuleConfig {
   // 端口号
   readonly port = 3000;
 
   // 数据库配置
-  readonly db = {
-    host: "175.24.235.246",
-    database: "?authSource=admin",
-    port: 27017,
-    user: "admin",
-    password: "admin111",
-  };
+  readonly db = dbConfig
 
   // 接口前缀
   readonly api_prefix = "/api";

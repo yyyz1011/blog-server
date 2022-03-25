@@ -56,3 +56,6 @@ typings/
  
 # dotenv environment variables file
 .env
+
+# private configuration like db config et.
+private.config.ts

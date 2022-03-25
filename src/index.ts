@@ -1,6 +1,6 @@
 import * as Koa from "koa";
 import * as KoaBody from "koa-body"; 
-import config from "./modules/config";
+import config from "./config";
 import router from "./routes";
 import catchError from "./middleware/catchError";
 
