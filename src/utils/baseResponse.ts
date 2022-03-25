@@ -6,7 +6,7 @@ const defaultMsg = backCode[STATUS_SUCCESS];
 interface BaseResponseReq {
   code?: string | number;
   message?: string;
-  data: any;
+  data?: any;
 }
 export default function ({
   code = defaultCode,
