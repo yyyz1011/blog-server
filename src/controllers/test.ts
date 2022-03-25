@@ -1,9 +1,6 @@
 import { GetTestDemoByGetReq, GetTestDemoByPostReq } from "../types/test";
-import {
-  STATUS_PARAMETER_ERROR,
-  STATUS_SUCCESS,
-  backCode,
-} from "../constants/backCode";
+import { STATUS_PARAMETER_ERROR } from "../constants/backCode";
+import baseResponse from "../utils/baseResponse";
 
 function validateGetTestDemoByGet(params: GetTestDemoByGetReq, ctx: any) {
   if (!params.test) {
@@ -24,15 +21,13 @@ class TestController {
 
     await validateGetTestDemoByGet(params, ctx);
 
-    ctx.body = {
-      code: STATUS_SUCCESS,
-      message: backCode[STATUS_SUCCESS],
+    ctx.body = baseResponse({
       data: {
         test,
         test_msg: "this is demo",
         method_type: "GET",
       },
-    };
+    });
   }
 
   // post 接口调试
@@ -42,15 +37,13 @@ class TestController {
 
     await validateGetTestDemoByPost(params, ctx);
 
-    ctx.body = {
-      code: STATUS_SUCCESS,
-      message: backCode[STATUS_SUCCESS],
+    ctx.body = baseResponse({
       data: {
         test,
         test_msg: "this is demo",
         method_type: "POST",
       },
-    };
+    });
   }
 }
 

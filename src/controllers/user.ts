@@ -1,5 +1,5 @@
 import { tokenKey } from "../config/private.config";
-import { STATUS_SUCCESS, backCode } from "../constants/backCode";
+import baseResponse from "../utils/baseResponse";
 const jwt = require("jsonwebtoken");
 
 class UserController {
@@ -14,13 +14,11 @@ class UserController {
       }
     );
 
-    ctx.body = {
-      code: STATUS_SUCCESS,
-      message: backCode[STATUS_SUCCESS],
+    ctx.body = baseResponse({
       data: {
         token,
       },
-    };
+    });
   }
 }
 
