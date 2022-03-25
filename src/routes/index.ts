@@ -1,4 +1,4 @@
-import config from "../modules/config";
+import config from "../config";
 import * as Router from "koa-router";
 import TestController from "../controllers/test";
 
