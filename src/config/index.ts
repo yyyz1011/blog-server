@@ -11,7 +11,7 @@ class ModuleConfig {
   readonly api_prefix = "/api";
 
   // 上传图片存放目录
-  readonly upload_path = "public/upload/images/";
+  readonly upload_path = "public/images/";
 
   // 上传图片大小限制
   readonly upload_img_size = 5 * 1024 * 1024;
