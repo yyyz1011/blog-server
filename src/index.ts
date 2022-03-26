@@ -7,16 +7,15 @@ import config from "./config";
 import router from "./routes";
 import catchError from "./middleware/catchError";
 
-// const mongooseUrl = `mongodb://${config.db.user}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.database}`;
-// console.log(mongooseUrl)
-// mongoose.connect(mongooseUrl);
-// const db = mongoose.connection;
-// db.on("error", () => {
-//   console.log("数据库连接出错!");
-// });
-// db.once("open", () => {
-//   console.log("数据库连接成功！");
-// });
+const mongooseUrl = `mongodb://${config.db.user}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.database}`;
+mongoose.connect(mongooseUrl);
+const db = mongoose.connection;
+db.on("error", () => {
+  console.log("数据库连接出错!");
+});
+db.once("open", () => {
+  console.log("数据库连接成功！");
+});
 
 const App = new Koa();
 
