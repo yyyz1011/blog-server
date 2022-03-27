@@ -58,6 +58,12 @@ class ArticleService {
       aid: article.aid,
     };
   }
+
+  static async getArticleList() {}
+
+  static async addArticleLike() {}
+
+  static async assArticleVv() {}
 }
 
 export default ArticleService;
