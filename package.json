@@ -25,13 +25,15 @@
     "koa-router": "^10.1.1",
     "koa-static": "^5.0.0",
     "mongodb": "^4.4.1",
-    "mongoose": "^6.2.8"
+    "mongoose": "^6.2.8",
+    "node-uuid": "^1.4.8"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.8",
     "@types/koa": "^2.13.4",
     "@types/koa-router": "^7.4.4",
     "@types/koa-static": "^4.0.2",
+    "@types/node-uuid": "^0.0.29",
     "nodemon": "^2.0.15",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"

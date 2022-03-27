@@ -2,7 +2,7 @@ import * as path from "path";
 import baseResponse from "../utils/baseResponse";
 
 class CommonController {
-  static async uploadPicture(ctx: any, next: () => Promise<any>) {
+  static async uploadPicture(ctx: any) {
     ctx.set("Access-Control-Allow-Origin", "*");
     ctx.set(
       "Access-Control-Allow-Headers",

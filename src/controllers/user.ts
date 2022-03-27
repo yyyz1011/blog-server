@@ -3,7 +3,7 @@ import baseResponse from "../utils/baseResponse";
 const jwt = require("jsonwebtoken");
 
 class UserController {
-  static async getUserInfo(ctx: any, next: () => Promise<any>) {
+  static async getUserInfo(ctx: any) {
     const token = jwt.sign(
       {
         loginTime: new Date().getTime(),
