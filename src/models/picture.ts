@@ -6,6 +6,7 @@ const PictureModel = new Schema({
   pid: {
     type: String,
     required: true,
+    unique: true,
   },
   // 图片标题
   title: {

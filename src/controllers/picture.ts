@@ -42,11 +42,8 @@ function validateDelPicture(params: DelPictureReq, ctx: any) {
 class PictureController {
   static async createPicture(ctx: any) {
     const params = ctx.request.body;
-
     await validateCreatePicture(params, ctx);
-
     const pid = uuid.v1();
-
     const data = await PictureService.createPicture({
       pid,
       ...params,
@@ -59,9 +56,7 @@ class PictureController {
 
   static async updatePicture(ctx: any) {
     const params = ctx.request.body;
-
     await validateUpdatePicture(params, ctx);
-
     const data = await PictureService.updatePicture(params, ctx);
 
     ctx.body = baseResponse({
@@ -71,9 +66,7 @@ class PictureController {
 
   static async delPicture(ctx: any) {
     const params = ctx.request.body;
-
     await validateDelPicture(params, ctx);
-
     const data = await PictureService.delPicture(params, ctx);
 
     ctx.body = baseResponse({
