@@ -18,5 +18,7 @@ router.post("/c/upload", checkToken, CommonController.uploadPicture);
 // 图库接口
 router.post("/p/create", checkToken, PictureController.createPicture);
 router.post("/p/update", checkToken, PictureController.updatePicture);
+router.post("/p/del", checkToken, PictureController.delPicture);
+router.get("/p/picture/list", checkToken, PictureController.getPictureList);
 
 export default router;

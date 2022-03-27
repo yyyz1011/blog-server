@@ -15,3 +15,7 @@ export interface UpdatePictureReq {
   create_time: string;
   picture_url: string;
 }
+
+export interface DelPictureReq {
+  pid: string;
+}
