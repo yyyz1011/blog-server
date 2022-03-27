@@ -6,6 +6,7 @@ import {
   DelArticleReq,
 } from "../types/article";
 import { STATUS_PARAMETER_ERROR } from "../constants/backCode";
+import ArticleService from "../services/article";
 
 function validateCreateArticle(params: CreateArticleReq, ctx: any) {
   const { title, desc, atid, content } = params;
@@ -30,7 +31,7 @@ class ArticleController {
     const params = ctx.request.body;
     await validateCreateArticle(params, ctx);
     const aid = uuid.v1();
-    const createTime = new Date().getTime();
+    const createTime = new Date().getTime().toString();
     const modifyTime = createTime;
     const newParams = {
       aid,
@@ -41,16 +42,17 @@ class ArticleController {
       create_time: createTime,
       modify_time: modifyTime,
     };
+    const data = await ArticleService.createArticle(newParams);
 
     ctx.body = baseResponse({
-      data: newParams,
+      data,
     });
   }
 
   static async updateArticle(ctx: any) {
     const params = ctx.request.body;
     await validateUpdateArticle(params, ctx);
-    const modifyTime = new Date().getTime();
+    const modifyTime = new Date().getTime().toString();
     const newParams = {
       aid: params.aid,
       title: params.title,
@@ -60,18 +62,20 @@ class ArticleController {
       create_time: params.create_time,
       modify_time: modifyTime,
     };
+    const data = await ArticleService.updateArticle(newParams, ctx);
 
     ctx.body = baseResponse({
-      data: newParams,
+      data,
     });
   }
 
   static async delArticle(ctx: any) {
     const params = ctx.request.body;
     await validateDelArticle(params, ctx);
+    const data = await ArticleService.delArticle(params, ctx);
 
     ctx.body = baseResponse({
-      data: params,
+      data,
     });
   }
 
