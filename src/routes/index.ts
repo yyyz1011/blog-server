@@ -28,6 +28,8 @@ router.post("/a/create", checkToken, ArticleController.createArticle);
 router.post("/a/update", checkToken, ArticleController.updateArticle);
 router.post("/a/del", checkToken, ArticleController.delArticle);
 router.get("/a/article/list", checkToken, ArticleController.getArticleList);
+router.get("/a/article/like", checkToken, ArticleController.addArticleLike);
+router.get("/a/article/vv", checkToken, ArticleController.addArticleVv);
 
 // 笔记类型接口
 router.post("/at/create", checkToken, ArticleTypeController.createArticleType);

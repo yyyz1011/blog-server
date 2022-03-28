@@ -21,3 +21,15 @@ export interface UpdateArticleReq {
 export interface DelArticleReq {
   aid: string;
 }
+
+export interface GetArticleListReq {
+  atid?: string;
+}
+
+export interface AddArticleLikeReq {
+  aid: string;
+}
+
+export interface AddArticleVvReq {
+  aid: string;
+}
