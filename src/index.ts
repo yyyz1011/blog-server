@@ -3,6 +3,7 @@ import * as KoaBody from "koa-body";
 import * as KoaStatic from "koa-static";
 import * as path from "path";
 import * as mongoose from "mongoose";
+import * as cors from "@koa/cors";
 import config from "./config";
 import router from "./routes";
 import catchError from "./middleware/catchError";
@@ -18,6 +19,8 @@ db.once("open", () => {
 });
 
 const App = new Koa();
+
+App.use(cors());
 
 App.use(catchError);
 
