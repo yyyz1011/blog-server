@@ -108,6 +108,8 @@ class ArticleService {
       });
     }
 
+    realRes.sort((a, b) => Number(b.modify_time) - Number(a.modify_time));
+
     return realRes;
   }
 
