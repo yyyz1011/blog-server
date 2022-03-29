@@ -1,4 +1,6 @@
 .idea
+dist
+public/images/*
 
 # Logs
 logs
