@@ -71,7 +71,9 @@ class PictureService {
         _id: 0,
       }
     );
-    return pictureList;
+    return pictureList.sort(
+      (a, b) => Number(b.create_time) - Number(a.create_time)
+    );
   }
 }
 
