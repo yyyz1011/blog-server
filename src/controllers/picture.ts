@@ -16,7 +16,7 @@ function validateCreatePicture(params: CreatePictureReq, ctx: any) {
     create_time: createTime,
     picture_url: pictureUrl,
   } = params;
-  if (!title || !region || !createTime || !pictureUrl) {
+  if (!title || !region || !desc || !createTime || !pictureUrl) {
     ctx.throw({ code: STATUS_PARAMETER_ERROR });
   }
 }
