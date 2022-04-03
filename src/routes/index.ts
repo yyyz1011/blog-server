@@ -41,6 +41,8 @@ router.get(
 );
 
 // 留言板接口
-router.post("/m/create", MessageController.createMessage);
+router.post("/m/create", checkToken, MessageController.createMessage);
+router.post("/m/del", checkToken, MessageController.delMessage);
+router.get("/m/list", checkToken, MessageController.getMessageList);
 
 export default router;
