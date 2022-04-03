@@ -6,6 +6,7 @@ import CommonController from "../controllers/common";
 import PictureController from "../controllers/picture";
 import ArticleController from "../controllers/article";
 import ArticleTypeController from "../controllers/article-type";
+import MessageController from "../controllers/message";
 
 const router = new Router({
   prefix: config.api_prefix,
@@ -38,5 +39,8 @@ router.get(
   checkToken,
   ArticleTypeController.getArticleTypeList
 );
+
+// 留言板接口
+router.post("/m/create", MessageController.createMessage);
 
 export default router;
