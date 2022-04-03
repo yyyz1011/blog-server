@@ -23,6 +23,7 @@ export interface DelArticleReq {
 }
 
 export interface GetArticleListReq {
+  aid?:string;
   atid?: string;
 }
 

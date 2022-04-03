@@ -1,6 +1,7 @@
 export interface CreateMessageReq {
   mid?: string;
   account: string;
+  nick_name: string;
   content: string;
   create_time?: string;
 }

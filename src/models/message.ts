@@ -12,6 +12,10 @@ const MessageModel = new Schema({
     type: String,
     required: true,
   },
+  nick_name: {
+    type: String,
+    required: true,
+  },
   create_time: {
     type: String,
     required: true,

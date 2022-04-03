@@ -65,12 +65,16 @@ class ArticleService {
 
   static async getArticleList(params: GetArticleListReq, ctx: any) {
     const atid = params.atid;
-    if (atid) {
-      const articleType = await ArticleTypeModel.findOne({ atid });
+    const aid = params.aid;
+    if (atid || aid) {
+      let params: GetArticleListReq = {};
+      if (atid) params.atid = atid;
+      if (aid) params.aid = aid;
+      const articleType = await ArticleTypeModel.findOne(params);
       if (!articleType) {
         ctx.throw({
           code: STATUS_PARAMETER_ERROR,
-          msg: "未找到对应atid的笔记类型",
+          msg: "未找到对应atid或aid的笔记",
         });
         return;
       }
@@ -78,7 +82,9 @@ class ArticleService {
 
     // TODO 需要获取list之后根据list的atid获取article-type表中atid对应的label
     // TODO @彬哥
-    const data = await ArticleModel.find();
+    let listParams: GetArticleListReq = {};
+    if (aid) listParams.aid = aid;
+    const data = await ArticleModel.find(listParams);
     let res: any[] = data
       .map((item) => {
         if (atid) {

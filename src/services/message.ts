@@ -34,6 +34,7 @@ class MessageService {
         mid: 1,
         account: 1,
         content: 1,
+        nick_name: 1,
         create_time: 1,
         _id: 0,
       }
