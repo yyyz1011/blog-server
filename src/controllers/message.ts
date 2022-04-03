@@ -1,7 +1,6 @@
 import * as uuid from "node-uuid";
 import { STATUS_PARAMETER_ERROR } from "../constants/backCode";
-import { CreateMessageReq, DelMessageReq } from "../types/message";
-import * as sanitizeHtml from "sanitize-html";
+import { CreateMessageReq, DelMessageReq } from "../types/message"; 
 import MessageService from "../services/message";
 import baseResponse from "../utils/baseResponse";
 
@@ -9,12 +8,6 @@ function validateCreateMessage(params: CreateMessageReq, ctx: any) {
   const { account, content } = params;
   if (!account || !content) {
     ctx.throw({ code: STATUS_PARAMETER_ERROR });
-  }
-  if (content !== sanitizeHtml(content)) {
-    ctx.throw({
-      code: STATUS_PARAMETER_ERROR,
-      msg: "小老弟是不是在XSS，手下留情啊",
-    });
   }
 }
 function validateDelMessage(params: DelMessageReq, ctx: any) {
