@@ -29,8 +29,8 @@ class LogController {
               innerInfo[infoList[0]] = infoList[1];
             });
             return {
-              innerDate,
-              innerType,
+              date:innerDate,
+              type:innerType,
               ...innerInfo,
             };
           });
