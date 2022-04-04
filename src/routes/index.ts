@@ -7,6 +7,7 @@ import PictureController from "../controllers/picture";
 import ArticleController from "../controllers/article";
 import ArticleTypeController from "../controllers/article-type";
 import MessageController from "../controllers/message";
+import LogController from "../controllers/log";
 
 const router = new Router({
   prefix: config.api_prefix,
@@ -44,5 +45,8 @@ router.get(
 router.post("/m/create", checkToken, MessageController.createMessage);
 router.post("/m/del", checkToken, MessageController.delMessage);
 router.get("/m/list", checkToken, MessageController.getMessageList);
+
+// 日志接口
+router.get("/l/list", LogController.getLogList);
 
 export default router;

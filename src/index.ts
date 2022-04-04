@@ -7,6 +7,7 @@ import * as cors from "@koa/cors";
 import config from "./config";
 import router from "./routes";
 import catchError from "./middleware/catchError";
+import { accessLogger } from "./utils/logger";
 
 const mongooseUrl = `mongodb://${config.db.user}:${config.db.password}@${config.db.host}:${config.db.port}/${config.db.database}`;
 mongoose.connect(mongooseUrl);
@@ -19,6 +20,8 @@ db.once("open", () => {
 });
 
 const App = new Koa();
+
+App.use(accessLogger())
 
 App.use(cors());
 
