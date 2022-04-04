@@ -10,9 +10,9 @@ class LogController {
     const logPath = path.resolve(__dirname, "../log");
     try {
       const files = await readdir(logPath);
-      const applicationFiles = files.filter((fileName) =>
-        fileName.match("application.log-")
-      );
+      const applicationFiles = files
+        .filter((fileName) => fileName.match("application.log-"))
+        .reverse();
       applicationFiles.forEach((item) => {
         const date = item.replace("application.log-", "").replace(".log", "");
         const fileData = readFileSync(logPath + "/" + item, "utf-8");
@@ -29,8 +29,8 @@ class LogController {
               innerInfo[infoList[0]] = infoList[1];
             });
             return {
-              date:innerDate,
-              type:innerType,
+              date: innerDate,
+              type: innerType,
               ...innerInfo,
             };
           });
